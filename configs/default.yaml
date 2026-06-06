@@ -1,0 +1,36 @@
+seed: 42
+data_root: ./data
+output_dir: ./outputs
+
+image_size: 224
+patch_size: 16
+batch_size: 16
+ssl_batch_size: 32
+num_workers: 4
+
+backbone: vit_small_patch16_224
+embedding_dim: 384
+num_classes_malaria: 2
+num_classes_chula: 11
+
+ssl_epochs: 50
+downstream_epochs: 50
+learning_rate: 0.0001
+weight_decay: 0.05
+mask_ratio: 0.75
+temperature: 0.2
+
+lora_rank: 8
+lora_alpha: 16
+dropout: 0.1
+
+mc_samples: 10
+ece_bins: 15
+
+lambda_mask: 1.0
+lambda_contrast: 1.0
+lambda_domain: 0.1
+lambda_dice: 1.0
+lambda_bce: 1.0
+lambda_boundary: 0.2
+lambda_uncertainty: 0.05
